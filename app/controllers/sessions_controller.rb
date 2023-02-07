@@ -15,6 +15,11 @@ class SessionsController < ApplicationController
         end
     end
 
+    delete '/logout' do 
+        session.clear
+        redirect "/"
+    end
+
 
     
 
