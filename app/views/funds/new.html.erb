@@ -1,5 +1,4 @@
-<h1>Insert the form to create a new instance of your model.</h1>
-<h1>New Fund</h1>
+<h1>Set up a new fund</h1>
 <form method="post" action="/funds">
   <p>
     <div><label for="name">Name</label></div>
@@ -7,8 +6,9 @@
   </p>
   <p>
     <div><label for="balance">Balance</label></div>
-    <textarea rows="1" cols="3" id="balance" type="text" name="fund[balance]"></textarea>
-    
+    <input id="balance" type="text" name="fund[balance]" />
+  </p>
+   <p>
     <div><label for="age">Age of funds in years</label></div>
     <select id="age" name="fund[age]">
       <option value="5">5</option>
