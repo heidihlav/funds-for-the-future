@@ -40,12 +40,18 @@ class FundsController < ApplicationController
   # PATCH: /funds/5
   patch "/funds/:id" do
     set_post
-    redirect "/funds/:id"
+    if @fund.update(name: params[:fund][:name], balance: params[:fund][:balance], age: params[:fund][:age])
+      flash[:success] = "Update successful."
+      redirect "/funds/#{@fund.id}"
+    else 
+      erb:"/funds/edit.html"
+    end
   end
 
   # DELETE: /funds/5/delete
-  delete "/funds/:id/delete" do
+  delete "/funds/:id" do
     set_post
+    @fund.destroy
     redirect "/funds"
   end
 end
