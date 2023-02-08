@@ -1,4 +1,4 @@
-class CreateFunds < ActiveRecord::Migration
+class CreateFunds < ActiveRecord::Migration[4.2]
   def change
     create_table :funds do |t|
       t.string :name
