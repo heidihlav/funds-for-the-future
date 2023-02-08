@@ -8,12 +8,18 @@ class FundsController < ApplicationController
 
   # GET: /funds/new
   get "/funds/new" do
+    @fund = Fund.new
     erb :"/funds/new.html"
   end
 
   # POST: /funds
   post "/funds" do
-    redirect "/funds"
+    @fund = current_user.funds.build(name: params[:fund][:name], balance: params[:fund][:balance], age: params[:fund][:age])
+    if @post.save
+      redirect "/funds"
+    else
+      erb :"/funds/new.html"
+    end
   end
 
   # GET: /funds/5
