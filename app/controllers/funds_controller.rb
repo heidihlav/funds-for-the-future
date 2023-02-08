@@ -18,6 +18,7 @@ class FundsController < ApplicationController
 
   # GET: /funds/5
   get "/funds/:id" do
+    @fund = Fund.find(params[:id])
     erb :"/funds/show.html"
   end
 
