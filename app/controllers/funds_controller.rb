@@ -43,3 +43,13 @@ class FundsController < ApplicationController
     redirect "/funds"
   end
 end
+
+private
+
+  def set_post
+    @fund = Fund.find_by_id(params[:id])
+    if @fund.nil?
+      flash[:error] = "Fund does not exist."
+      redirect "/posts"
+    end
+  end
