@@ -1,1 +1,5 @@
 <h1>This is the Model's index page.</h1>
+    <% @funds.each do |f| %>
+        <p><a href="/funds/<%= fund.id %>"><%= fund.name %></a></p>
+    <% end %>
+

@@ -2,6 +2,7 @@ class FundsController < ApplicationController
 
   # GET: /funds
   get "/funds" do
+    @funds = Fund.all
     erb :"/funds/index.html"
   end
 
