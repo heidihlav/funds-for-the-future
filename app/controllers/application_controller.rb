@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    @funds = Fund.all
     erb :"/funds/index.html"
   end
 
