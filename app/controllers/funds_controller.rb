@@ -1,3 +1,5 @@
+require 'pry'
+
 class FundsController < ApplicationController
 
   # GET: /funds
@@ -6,12 +8,6 @@ class FundsController < ApplicationController
     erb :"/funds/index.html"
   end
 
-  # GET: /funds/new
-  get "/funds/new" do
-    redirect "/login" if not logged_in?
-    @fund = Fund.new
-    erb :"/funds/new.html"
-  end
 
   # POST: /funds
   post "/funds" do
@@ -23,6 +19,15 @@ class FundsController < ApplicationController
       erb :"/funds/new.html"
     end
   end
+
+
+  # GET: /funds/new
+  get "/funds/new" do
+    redirect "/login" if not logged_in?
+    @fund = Fund.new
+    erb :"/funds/new.html"
+  end
+
 
   # GET: /funds/5
   get "/funds/:id" do
