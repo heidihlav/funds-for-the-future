@@ -1,6 +1,18 @@
-<h1>This is the Model's index page.</h1>
+<h1>Your funds</h1>
 <% @funds.each do |f| %>
-    <p><%= f.name %></p>
-    <p><a href="/funds/<%= f.id %>"><%= f.name %></a></p>
-    <p><a href="/funds/<%= f.id %>"><%= f.name %></a></p>
+    <p>
+      <div>Name:</div>
+        <div><%= f.name %></div>
+    </p>
+    <p>
+      <div>Balance:</div>
+        <div>$<%= f.balance %></div>
+    </p>
+    <p>
+      <div>Age:</div>
+        <div><%= f.age %> years</div>
+    </p>
 <% end %>
+
+    <%# <p><a href="/funds/<%= f.id"><%= f.name %>
+    <%# </a></p>  %>

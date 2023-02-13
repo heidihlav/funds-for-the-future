@@ -1,3 +1,5 @@
+require 'pry'
+
 class FundsController < ApplicationController
 
   # GET: /funds
@@ -56,6 +58,6 @@ def set_post
   @fund = Fund.find_by_id(params[:id])
     if @fund.nil?
       flash[:error] = "Fund does not exist."
-      redirect "/posts"
+      redirect "/funds"
     end
   end
