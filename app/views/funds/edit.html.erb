@@ -1,4 +1,3 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
 <% if @fund.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@fund.errors.count, "error") %> prohibited this fund from being saved:</h2>
@@ -12,7 +11,7 @@
 <% end %>
 
 
-<h1>Update information about your fund.</h1>
+<h1>Add money to your fund.</h1>
 <form method="post" action="/funds">
   <p>
     <div><label for="name">Name</label></div>
@@ -24,13 +23,7 @@
   </p>
    <p>
     <div><label for="age">Age of funds in years</label></div>
-    <select id="age" name="fund[age]">
-      <option value="5">5</option>
-      <option value="10">10</option>
-      <option value="15">15</option>
-      <option value="20">20</option>
-      <option value="25">25</option>
-    </select>
+    <%= @fund.age %>
 
   </p>
 
