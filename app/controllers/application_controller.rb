@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
+    redirect "/login" if not logged_in?
     @funds = Fund.all
     erb :"/funds/index.html"
   end
