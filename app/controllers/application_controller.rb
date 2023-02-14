@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
 
   get "/" do
     redirect "/login" if not logged_in?
-    @funds = Fund.all
+    @funds = current_user.funds.all
     erb :"/funds/index.html"
   end
 

@@ -20,6 +20,7 @@
           <a href="/login">Log In</a>
           <a href="/users/new">Sign Up</a>
         <% else %>
+          <a href="/funds/new">New Fund</a>
           <form method="post" action="/logout">
             <input type="hidden" name="_method" value="delete" />
             <input type="submit" value="Log Out" />
